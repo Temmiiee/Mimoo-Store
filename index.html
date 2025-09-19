@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌸 Mimoo Store - Nature & Pop Culture Goodies 🦋</title>
+    <meta name="description" content="Discover vibrant keychains, prints, badges, and charms inspired by nature and pop culture at Mimoo Store!">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1>🌸 Mimoo Store 🦋</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#products" class="nav-link">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <div class="nav-cart">
+                    <button id="cart-btn" class="cart-button">
+                        🛒 Cart (<span id="cart-count">0</span>)
+                    </button>
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2 class="hero-title">Welcome to Your Vibrant World! 🌈</h2>
+            <p class="hero-subtitle">Discover amazing keychains, prints, badges, and charms inspired by nature and pop culture</p>
+            <a href="#products" class="cta-button">Shop Now ✨</a>
+        </div>
+        <div class="hero-decoration">
+            <div class="floating-emoji">🌸</div>
+            <div class="floating-emoji">🦋</div>
+            <div class="floating-emoji">🌺</div>
+            <div class="floating-emoji">⭐</div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filters">
+        <div class="container">
+            <h3>Find Your Perfect Goodies</h3>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Products</button>
+                <button class="filter-btn" data-filter="keychains">🔑 Keychains</button>
+                <button class="filter-btn" data-filter="prints">🖼️ Prints</button>
+                <button class="filter-btn" data-filter="badges">🏅 Badges</button>
+                <button class="filter-btn" data-filter="charms">✨ Charms</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Our Goodies Collection 🛍️</h2>
+            <div id="products-grid" class="products-grid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">About Mimoo Store 💖</h2>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <div class="card-icon">🌿</div>
+                        <h3>Nature Inspired</h3>
+                        <p>Our designs celebrate the beauty of nature with flowers, animals, and natural landscapes that bring joy to your everyday life.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-icon">🎮</div>
+                        <h3>Pop Culture Fun</h3>
+                        <p>From anime to gaming, movies to music - we create goodies that represent your favorite fandoms and interests.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-icon">🎨</div>
+                        <h3>Vibrant Colors</h3>
+                        <p>Life's too short for boring colors! Our products feature bright, cheerful palettes that make every day more colorful.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch! 📬</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>We'd love to hear from you!</h3>
+                    <p>Questions about our products? Custom design requests? Just want to say hi? Reach out!</p>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <span class="contact-icon">📧</span>
+                            <span>hello@mimoostore.com</span>
+                        </div>
+                        <div class="contact-method">
+                            <span class="contact-icon">📱</span>
+                            <span>@MimooStore</span>
+                        </div>
+                        <div class="contact-method">
+                            <span class="contact-icon">🌐</span>
+                            <span>Follow us for updates!</span>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="submit-btn">Send Message 💌</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🌸 Mimoo Store 🦋</h3>
+                    <p>Your vibrant destination for nature and pop culture goodies!</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#" data-filter="keychains">Keychains</a></li>
+                        <li><a href="#" data-filter="prints">Prints</a></li>
+                        <li><a href="#" data-filter="badges">Badges</a></li>
+                        <li><a href="#" data-filter="charms">Charms</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#">📷 Instagram</a>
+                        <a href="#">🐦 Twitter</a>
+                        <a href="#">📌 Pinterest</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mimoo Store. Made with 💖 for nature and pop culture lovers.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Your Shopping Cart 🛒</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div id="cart-items" class="cart-items">
+                <p class="empty-cart">Your cart is empty! Start shopping to fill it with amazing goodies! 🌈</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <strong>Total: $<span id="cart-total">0.00</span></strong>
+                </div>
+                <button class="checkout-btn">Checkout ✨</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/products.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
