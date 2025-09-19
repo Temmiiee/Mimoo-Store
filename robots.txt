@@ -1,0 +1,64 @@
+# Robots.txt pour Mimoo Store
+# Optimisé pour le SEO e-commerce
+
+# Autoriser tous les bots principaux
+User-agent: *
+Allow: /
+
+# Directives spécifiques pour les moteurs de recherche principaux
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+# Bloquer l'accès aux fichiers/dossiers non pertinents pour le SEO
+Disallow: /js/
+Disallow: /css/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /package*.json
+Disallow: /*?*utm_source=
+Disallow: /*?*utm_medium=
+Disallow: /*?*utm_campaign=
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /*.log$
+
+# Autoriser spécifiquement les images pour le SEO images
+Allow: /images/
+Allow: /img/
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.webp$
+Allow: /*.svg$
+
+# Bloquer les bots malveillants et scrapers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+# Localisation du sitemap
+Sitemap: https://mimoo-store.com/sitemap.xml
+
+# Informations additionnelles
+# Site: https://mimoo-store.com
+# Contact: hello@mimoostore.com
+# Dernière mise à jour: 2025-01-19

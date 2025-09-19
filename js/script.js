@@ -266,6 +266,25 @@ function handleFilterClick(e) {
   }
 }
 
+// Proceed to checkout
+function proceedToCheckout() {
+  const cart = JSON.parse(localStorage.getItem('mimoo-cart') || '[]');
+  
+  if (cart.length === 0) {
+    alert('Votre panier est vide. Ajoutez des produits avant de procéder au paiement.');
+    return;
+  }
+  
+  // Fermer le modal du panier
+  const cartModal = document.getElementById('cart-modal');
+  if (cartModal) {
+    cartModal.style.display = 'none';
+  }
+  
+  // Redirection vers la page de checkout
+  window.location.href = 'checkout.html';
+}
+
 // Shopping Cart Functions
 function addToCart(product) {
   const existingItem = cart.find(item => item.id === product.id);

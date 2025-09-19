@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>✅ Commande confirmée - Mimoo Store | Merci pour votre achat !</title>
+    <meta name="description" content="Votre commande Mimoo Store a été confirmée. Vous recevrez bientôt vos goodies anime et nature par email et courrier.">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data pour la commande -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Order",
+        "orderNumber": "",
+        "orderDate": "",
+        "orderStatus": "Confirmed",
+        "seller": {
+            "@type": "Organization",
+            "name": "Mimoo Store",
+            "url": "https://mimoo-store.com"
+        }
+    }
+    </script>
+</head>
+<body class="checkout-body confirmation-page">
+    
+    <!-- Header simplifié -->
+    <header class="checkout-header">
+        <div class="container">
+            <div class="checkout-nav">
+                <a href="index.html" class="logo-link">
+                    <h1>🌸 Mimoo Store 🦋</h1>
+                </a>
+                <div class="checkout-progress">
+                    <span class="step active">1. Panier</span>
+                    <span class="step-arrow">→</span>
+                    <span class="step active">2. Livraison & Paiement</span>
+                    <span class="step-arrow">→</span>
+                    <span class="step current">3. Confirmation</span>
+                </div>
+                <div class="secure-badge">
+                    ✅ Paiement confirmé
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="checkout-main confirmation-main">
+        <div class="container">
+            
+            <!-- Message de confirmation -->
+            <section class="confirmation-hero">
+                <div class="success-animation">
+                    <div class="check-circle">
+                        <div class="check-mark">✓</div>
+                    </div>
+                </div>
+                <h1 class="confirmation-title">Merci pour votre commande ! 🎉</h1>
+                <p class="confirmation-subtitle">
+                    Votre paiement a été traité avec succès. Vous allez recevoir un email de confirmation dans quelques instants.
+                </p>
+                <div class="order-number-display">
+                    <span class="order-label">Numéro de commande :</span>
+                    <span class="order-number" id="display-order-number">MIMOO-Loading...</span>
+                </div>
+            </section>
+
+            <div class="confirmation-layout">
+                
+                <!-- Détails de la commande -->
+                <div class="confirmation-content">
+                    
+                    <!-- Résumé de commande -->
+                    <section class="confirmation-section">
+                        <h2 class="section-title">
+                            <span class="section-icon">📦</span>
+                            Résumé de votre commande
+                        </h2>
+                        
+                        <div class="order-items" id="confirmation-items">
+                            <!-- Articles chargés dynamiquement -->
+                        </div>
+                        
+                        <div class="order-totals">
+                            <div class="total-line">
+                                <span>Sous-total</span>
+                                <span id="conf-subtotal">0,00 €</span>
+                            </div>
+                            <div class="total-line">
+                                <span>Livraison</span>
+                                <span id="conf-shipping">0,00 €</span>
+                            </div>
+                            <div class="total-line discount-line" id="conf-discount-line" style="display: none;">
+                                <span>Remise</span>
+                                <span id="conf-discount">-0,00 €</span>
+                            </div>
+                            <div class="total-line">
+                                <span>TVA (20%)</span>
+                                <span id="conf-tax">0,00 €</span>
+                            </div>
+                            <div class="total-line total-final">
+                                <span>Total payé</span>
+                                <span id="conf-total">0,00 €</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Informations de livraison -->
+                    <section class="confirmation-section">
+                        <h2 class="section-title">
+                            <span class="section-icon">🚚</span>
+                            Informations de livraison
+                        </h2>
+                        
+                        <div class="delivery-info">
+                            <div class="info-group">
+                                <h3>Adresse de livraison</h3>
+                                <div class="address-block" id="delivery-address">
+                                    <!-- Adresse chargée dynamiquement -->
+                                </div>
+                            </div>
+                            
+                            <div class="info-group">
+                                <h3>Mode de livraison</h3>
+                                <div class="delivery-method" id="delivery-method">
+                                    <!-- Mode de livraison chargé dynamiquement -->
+                                </div>
+                            </div>
+                            
+                            <div class="info-group">
+                                <h3>Délai de livraison estimé</h3>
+                                <div class="delivery-estimate" id="delivery-estimate">
+                                    <!-- Estimation chargée dynamiquement -->
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Informations de paiement -->
+                    <section class="confirmation-section">
+                        <h2 class="section-title">
+                            <span class="section-icon">💳</span>
+                            Paiement
+                        </h2>
+                        
+                        <div class="payment-info">
+                            <div class="payment-method">
+                                <div class="method-used">
+                                    <span class="method-icon">💳</span>
+                                    <span>Carte bancaire</span>
+                                    <span class="method-status">✅ Confirmé</span>
+                                </div>
+                            </div>
+                            
+                            <div class="payment-details">
+                                <div class="detail-row">
+                                    <span>ID de transaction :</span>
+                                    <span id="payment-id" class="payment-ref">pi_demo_loading...</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span>Date de paiement :</span>
+                                    <span id="payment-date">Loading...</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span>Statut :</span>
+                                    <span class="payment-status success">Paiement réussi</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Prochaines étapes -->
+                    <section class="confirmation-section">
+                        <h2 class="section-title">
+                            <span class="section-icon">📋</span>
+                            Que se passe-t-il maintenant ?
+                        </h2>
+                        
+                        <div class="next-steps">
+                            <div class="step-item">
+                                <div class="step-icon">📧</div>
+                                <div class="step-content">
+                                    <h3>Confirmation par email</h3>
+                                    <p>Vous allez recevoir un email de confirmation avec tous les détails de votre commande dans les 5 prochaines minutes.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="step-item">
+                                <div class="step-icon">🎨</div>
+                                <div class="step-content">
+                                    <h3>Préparation de commande</h3>
+                                    <p>Nos artistes préparent soigneusement vos goodies avec amour. Cette étape prend généralement 1-2 jours ouvrés.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="step-item">
+                                <div class="step-icon">📦</div>
+                                <div class="step-content">
+                                    <h3>Expédition</h3>
+                                    <p>Dès que votre commande est expédiée, vous recevrez un email avec le numéro de suivi pour suivre votre colis en temps réel.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="step-item">
+                                <div class="step-icon">🎁</div>
+                                <div class="step-content">
+                                    <h3>Réception</h3>
+                                    <p>Profitez de vos nouveaux goodies ! N'hésitez pas à partager vos photos sur nos réseaux sociaux avec #MimooStore</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Sidebar avec actions -->
+                <aside class="confirmation-sidebar">
+                    
+                    <!-- Numéro de commande -->
+                    <div class="sidebar-card order-summary-card">
+                        <h3>Votre commande</h3>
+                        <div class="order-ref">
+                            <span class="ref-label">Référence :</span>
+                            <span class="ref-number" id="sidebar-order-number">Loading...</span>
+                        </div>
+                        <div class="order-date">
+                            <span id="order-date">Loading...</span>
+                        </div>
+                    </div>
+
+                    <!-- Actions rapides -->
+                    <div class="sidebar-card actions-card">
+                        <h3>Actions</h3>
+                        <div class="action-buttons">
+                            <button class="action-btn primary" onclick="window.print()">
+                                <span class="btn-icon">🖨️</span>
+                                Imprimer la commande
+                            </button>
+                            
+                            <button class="action-btn secondary" onclick="downloadOrderPDF()">
+                                <span class="btn-icon">📄</span>
+                                Télécharger PDF
+                            </button>
+                            
+                            <button class="action-btn secondary" onclick="copyOrderNumber()">
+                                <span class="btn-icon">📋</span>
+                                Copier la référence
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Support client -->
+                    <div class="sidebar-card support-card">
+                        <h3>Besoin d'aide ?</h3>
+                        <p>Notre équipe est là pour vous accompagner !</p>
+                        <div class="support-options">
+                            <a href="mailto:hello@mimoostore.com" class="support-link">
+                                <span class="support-icon">📧</span>
+                                <span>hello@mimoostore.com</span>
+                            </a>
+                            
+                            <a href="#contact" class="support-link">
+                                <span class="support-icon">💬</span>
+                                <span>Chat en direct</span>
+                            </a>
+                            
+                            <a href="tel:+33123456789" class="support-link">
+                                <span class="support-icon">📞</span>
+                                <span>01 23 45 67 89</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Recommandations -->
+                    <div class="sidebar-card recommendations-card">
+                        <h3>Vous pourriez aussi aimer</h3>
+                        <div class="recommended-items">
+                            <div class="recommended-item">
+                                <img src="https://via.placeholder.com/60x60/ff6b9d/ffffff?text=🌸" alt="Produit recommandé" class="rec-image">
+                                <div class="rec-details">
+                                    <div class="rec-name">Stickers Totoro</div>
+                                    <div class="rec-price">6,90 €</div>
+                                </div>
+                            </div>
+                            
+                            <div class="recommended-item">
+                                <img src="https://via.placeholder.com/60x60/4ecdc4/ffffff?text=🦋" alt="Produit recommandé" class="rec-image">
+                                <div class="rec-details">
+                                    <div class="rec-name">Pin's Sakura</div>
+                                    <div class="rec-price">9,50 €</div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="action-btn primary full-width" onclick="window.location.href='index.html#products'">
+                            Continuer mes achats
+                        </button>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- Newsletter et réseaux sociaux -->
+            <section class="post-order-engagement">
+                <div class="engagement-grid">
+                    
+                    <div class="engagement-card newsletter-card">
+                        <h3>🎁 Restez informé des nouveautés</h3>
+                        <p>Soyez les premiers à découvrir nos nouvelles collections et profitez d'offres exclusives !</p>
+                        <div class="newsletter-form" id="newsletter-signup">
+                            <!-- Formulaire newsletter si pas déjà inscrit -->
+                        </div>
+                    </div>
+                    
+                    <div class="engagement-card social-card">
+                        <h3>📸 Partagez vos goodies</h3>
+                        <p>Montrez-nous vos achats sur les réseaux sociaux !</p>
+                        <div class="social-hashtags">
+                            <span class="hashtag">#MimooStore</span>
+                            <span class="hashtag">#Goodies</span>
+                            <span class="hashtag">#AnimeLife</span>
+                            <span class="hashtag">#Kawaii</span>
+                        </div>
+                        <div class="social-links">
+                            <a href="#" class="social-btn instagram">📷 Instagram</a>
+                            <a href="#" class="social-btn tiktok">🎵 TikTok</a>
+                            <a href="#" class="social-btn pinterest">📌 Pinterest</a>
+                        </div>
+                    </div>
+                    
+                    <div class="engagement-card review-card">
+                        <h3>⭐ Votre avis compte</h3>
+                        <p>Aidez d'autres fans à découvrir nos produits en laissant un avis !</p>
+                        <button class="action-btn primary" onclick="requestReview()">
+                            Laisser un avis
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer minimal -->
+    <footer class="checkout-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-thanks">
+                    <h3>Merci de faire confiance à Mimoo Store ! 💖</h3>
+                    <p>Votre soutien nous permet de continuer à créer des goodies uniques pour tous les fans de culture pop et de nature.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="index.html">Accueil</a>
+                    <a href="index.html#products">Boutique</a>
+                    <a href="cgv.html">CGV</a>
+                    <a href="politique-confidentialite.html">Confidentialité</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+                
+                <div class="footer-security">
+                    <span>🔒 Site sécurisé SSL</span>
+                    <span>💳 Stripe</span>
+                    <span>🎨 Création artisanale</span>
+                    <span>✨ Qualité garantie</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/order-confirmation.js"></script>
+    <script>
+        // Initialiser la page de confirmation
+        document.addEventListener('DOMContentLoaded', function() {
+            window.orderConfirmation.init();
+        });
+    </script>
+
+    <!-- Schema.org pour SEO (ordre confirmé) -->
+    <script type="application/ld+json" id="order-schema">
+    {
+        "@context": "https://schema.org",
+        "@type": "Invoice",
+        "description": "Commande Mimoo Store confirmée",
+        "provider": {
+            "@type": "Organization",
+            "name": "Mimoo Store",
+            "url": "https://mimoo-store.com"
+        },
+        "paymentStatus": "PaymentComplete"
+    }
+    </script>
+
+    <style>
+        /* Styles spécifiques à la confirmation */
+        .confirmation-page {
+            background: linear-gradient(135deg, #ff6b9d10 0%, #4ecdc410 100%);
+        }
+
+        .confirmation-hero {
+            text-align: center;
+            padding: 3rem 0;
+            background: white;
+            border-radius: var(--checkout-border-radius);
+            margin-bottom: 3rem;
+            box-shadow: var(--checkout-shadow);
+        }
+
+        .success-animation {
+            margin-bottom: 2rem;
+        }
+
+        .check-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--checkout-success), var(--checkout-secondary));
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: successPulse 1.5s ease-in-out;
+        }
+
+        .check-mark {
+            font-size: 2rem;
+            color: white;
+            font-weight: bold;
+            animation: checkMark 0.8s ease-in-out 0.5s both;
+        }
+
+        @keyframes successPulse {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes checkMark {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .confirmation-title {
+            font-size: 2.5rem;
+            color: var(--checkout-gray-800);
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+
+        .confirmation-subtitle {
+            font-size: 1.2rem;
+            color: var(--checkout-gray-600);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .order-number-display {
+            background: var(--checkout-gray-100);
+            padding: 1rem 2rem;
+            border-radius: var(--checkout-border-radius);
+            display: inline-block;
+            animation: fadeInUp 0.8s ease-out 0.9s both;
+        }
+
+        .order-label {
+            color: var(--checkout-gray-600);
+            margin-right: 1rem;
+        }
+
+        .order-number {
+            font-weight: 700;
+            color: var(--checkout-primary);
+            font-size: 1.1rem;
+        }
+
+        .confirmation-layout {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 3rem;
+        }
+
+        .confirmation-content {
+            animation: fadeInLeft 0.8s ease-out 0.4s both;
+        }
+
+        .confirmation-sidebar {
+            animation: fadeInRight 0.8s ease-out 0.6s both;
+        }
+
+        .confirmation-section {
+            background: white;
+            border-radius: var(--checkout-border-radius);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--checkout-shadow);
+        }
+
+        .section-icon {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+
+        .sidebar-card {
+            background: white;
+            border-radius: var(--checkout-border-radius);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--checkout-shadow);
+        }
+
+        .order-items {
+            margin-bottom: 2rem;
+        }
+
+        .order-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--checkout-gray-200);
+        }
+
+        .order-item:last-child {
+            border-bottom: none;
+        }
+
+        .next-steps {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .step-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--checkout-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .action-buttons {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .action-btn {
+            padding: 0.75rem 1rem;
+            border-radius: var(--checkout-border-radius);
+            border: none;
+            cursor: pointer;
+            transition: var(--checkout-transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: center;
+            font-weight: 500;
+        }
+
+        .action-btn.primary {
+            background: var(--checkout-primary);
+            color: white;
+        }
+
+        .action-btn.secondary {
+            background: var(--checkout-gray-200);
+            color: var(--checkout-gray-800);
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--checkout-shadow);
+        }
+
+        .post-order-engagement {
+            margin-top: 4rem;
+            padding: 3rem 0;
+        }
+
+        .engagement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .engagement-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--checkout-border-radius);
+            box-shadow: var(--checkout-shadow);
+            text-align: center;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .confirmation-layout {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .confirmation-title {
+                font-size: 2rem;
+            }
+            
+            .engagement-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>
