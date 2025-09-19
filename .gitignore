@@ -41,3 +41,8 @@ logs
 
 # Cache
 .cache/
+
+# Documentation et guides (usage interne)
+*.md
+*.MD
+!README.md
