@@ -178,6 +178,64 @@ const products = [
     description: "Vintage-style arcade token with neon glow accents. Gamer approved!",
     emoji: "🪙",
     tags: ["pop-culture", "arcade", "retro", "glow"]
+  },
+
+  // Original Artwork
+  {
+    id: 19,
+    name: "Ethereal Dreams Canvas",
+    category: "artwork",
+    price: 89.99,
+    description: "Original acrylic painting on canvas featuring dreamy landscapes with vibrant colors. Unique piece, one of a kind.",
+    emoji: "🎨",
+    tags: ["original", "canvas", "acrylic", "landscape", "unique"],
+    popular: true
+  },
+  {
+    id: 20,
+    name: "Cosmic Harmony Watercolor",
+    category: "artwork",
+    price: 65.99,
+    description: "Hand-painted watercolor depicting cosmic themes with flowing colors. Original artwork signed by the artist.",
+    emoji: "🌌",
+    tags: ["original", "watercolor", "cosmic", "signed", "handmade"]
+  },
+  {
+    id: 21,
+    name: "Urban Nature Fusion",
+    category: "artwork",
+    price: 125.99,
+    description: "Mixed media artwork combining urban elements with nature motifs. Original piece with textured layers.",
+    emoji: "🏙️",
+    tags: ["original", "mixed-media", "urban", "nature", "textured"],
+    popular: true
+  },
+  {
+    id: 22,
+    name: "Floral Abstract Study",
+    category: "artwork",
+    price: 75.99,
+    description: "Abstract interpretation of floral forms using bold brushstrokes and vivid pigments. Original oil painting.",
+    emoji: "🌺",
+    tags: ["original", "abstract", "floral", "oil", "bold"]
+  },
+  {
+    id: 23,
+    name: "Digital Dreams Print",
+    category: "artwork",
+    price: 55.99,
+    description: "Original digital art piece exploring the intersection of technology and imagination. Limited edition print.",
+    emoji: "📱",
+    tags: ["original", "digital", "technology", "limited", "futuristic"]
+  },
+  {
+    id: 24,
+    name: "Zen Garden Meditation",
+    category: "artwork",
+    price: 95.99,
+    description: "Peaceful ink wash painting inspired by Japanese zen gardens. Original artwork promoting tranquility.",
+    emoji: "🌏",
+    tags: ["original", "ink", "zen", "japanese", "peaceful"]
   }
 ];
 
