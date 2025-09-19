@@ -45,4 +45,3 @@ logs
 # Documentation et guides (usage interne)
 *.md
 *.MD
-!README.md
